@@ -4,13 +4,13 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const sourcemaps = require('gulp-sourcemaps');
 const browserify = require('browserify');
-const uglify = require('gulp-uglify-es').default;
+// const uglify = require('gulp-uglify-es').default;
 const sass = require('gulp-sass');
 const appServer = require('gulp-server-livereload');
 const log = require('fancy-log');
 const colors = require('ansi-colors');
 
-function printError (err) {
+function printError(err) {
   log(colors.red('[Error]'), err.toString());
 }
 
@@ -27,7 +27,7 @@ gulp.task('browserify', () => (
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(uglify())
+    // .pipe(uglify())
     .on('error', printError)
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/js/'))
