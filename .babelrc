@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "stage-2",
+    "react",
+    ["env", {
+      "debug": true,
+      "targets": {
+        "chrome": "60",
+      }
+    }]
+  ]
+}
